@@ -1,0 +1,44 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "lib": [
+            "es2017"
+        ],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noEmitHelpers": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": false,
+        "strictNullChecks": true,
+        "noUnusedLocals": true,
+        "strictFunctionTypes": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "outDir": "./build/",
+        "strict": true,
+        "sourceMap": true,
+        "inlineSources": true,
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true, // chenge form false to true when add sequelize
+        "emitDecoratorMetadata": true, // new when add sequelize,
+        "strictPropertyInitialization": false,
+        "forceConsistentCasingInFileNames": true,
+        "importHelpers": true,
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "resolveJsonModule": true,
+        "jsx": "react"
+    },
+    "files": [
+        "./node_modules/@types/node/index.d.ts"
+    ],
+    "include": [
+        "src/**/**/*.ts",
+        "index.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

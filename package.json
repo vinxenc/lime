@@ -8,7 +8,8 @@
     "build": "rm -rf build && tsc --project tsconfig.json",
     "dev": "npm run build && nodemon --watch 'src/**/*.ts' --exec 'node' build/server/index.js --verbose",
     "server:dev": "nodemon --watch 'src/server/**/*.ts' --exec 'ts-node' src/server/index.ts --verbose",
-    "start": "npm run build && node build/server/index.js"
+    "start": "node build/server/index.js",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",

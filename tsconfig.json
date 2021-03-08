@@ -25,6 +25,7 @@
         "strictPropertyInitialization": false,
         "forceConsistentCasingInFileNames": true,
         "importHelpers": true,
+        "declaration": true,
         "typeRoots": [
             "node_modules/@types"
         ],

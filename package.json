@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/vinxenc/lime#readme",
   "dependencies": {
-    "parse-server": "4.5.0"
+    "parse-server": "4.5.0",
+    "parse-dashboard": "2.1.0"
   },
   "devDependencies": {
     "ts-node": "9.1.1",

@@ -1,11 +1,11 @@
 import * as express from 'express';
 import * as ParseDashboard from 'parse-dashboard';
-import * as path from 'path';
 import { ParseServer } from 'parse-server';
+import * as path from 'path';
 import { 
-    PARSE_SERVER_PROPERTY, 
+    PARSE_DASHBOARD_OPTIONS, 
     PARSE_DASHBOARD_PROPERTY, 
-    PARSE_DASHBOARD_OPTIONS 
+    PARSE_SERVER_PROPERTY 
 } from './settings/parse';
 
 const app = express();
@@ -28,10 +28,9 @@ app.use('/api', api);
 // make the Parse Dashboard available at /dashboard
 app.use('/dashboard', dashboard);
 
-app.use('*', (_: express.Request, res: express.Response) => res.sendFile(
-    __dirname + '/public/index.html')
-);
+app.use('*', (_: express.Request, res: express.Response) => res.sendFile(`${__dirname}/public/index.html`));
 
-app.listen(process.env.PORT || 1337, function () {
+app.listen(process.env.PORT || 1337, () => {
+    // tslint:disable-next-line
     console.log('parse-server-example running on port 1337.');
 });

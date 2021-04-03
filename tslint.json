@@ -1,0 +1,76 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+      "tslint:recommended",
+      "tslint-config-airbnb",
+      "tslint-config-prettier",
+      "tslint:latest", 
+      "tslint-react"
+    ],
+    "jsRules": {},
+    "linterOptions": {
+      "exclude": [
+        "node_modules/**/*.ts",
+        "coverage/lcov-report/*.js"
+      ]
+    },
+    "rules": {
+      "jsx-wrap-multiline": false,
+      "jsx-no-lambda": false,
+      "prefer-array-literal": false,
+      "interface-name": false,
+      "import-name": false,
+      "no-unused-variable": false,
+      "no-unused": [
+        true,
+        "ignore-parameters"
+      ],
+      "early-exit": false,
+      "no-collapsible-if": true,
+      "no-unnecessary-else": true,
+      "no-return-undefined": true,
+      "no-static-this": true,
+      "no-unnecessary-type-annotation": true,
+      "no-var-before-return": true,
+      "no-unnecessary-local-variable": true,
+      "only-arrow-functions": true,
+      "ter-newline-after-var": [
+        true,
+        "always"
+      ],
+      "max-func-body-length": [
+        false,
+        {
+          "ignore-comments": true,
+          "func-body-length": 50,
+          "method-body-length": 100
+        }
+      ],
+      "cyclomatic-complexity": [
+        true,
+        30
+      ],
+      "max-file-line-count": [
+        true,
+        1350
+      ],
+      "prefer-const": true,
+      "newline-before-return": true,
+      "prefer-method-signature": true,
+      "no-return-await": true,
+      "prefer-conditional-expression": true,
+      "variable-name": [
+        true,
+        "ban-keywords",
+        "check-format",
+        "allow-pascal-case",
+        "allow-leading-underscore"
+      ],
+      "member-ordering": false,
+      "object-literal-sort-keys": false,
+      "member-access": false,
+      "no-var-requires": false,
+      "no-redundant-jsdoc": true
+    },
+    "rulesDirectory": []
+}

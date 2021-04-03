@@ -4,13 +4,18 @@
   "description": "Message Application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf build && tsc --project tsconfig.json && copyfiles public/** build/",
     "dev": "npm run build && nodemon --watch 'src/**/*.ts' --exec 'node' build/server/index.js --verbose",
     "server:dev": "nodemon --watch 'src/server/**/*.ts' --exec 'ts-node' src/server/index.ts --verbose",
     "start": "node build/index.js",
     "postinstall": "npm run webpack && npm run build",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "test": "TZ=Asia/Ho_Chi_Minh jest",
+    "test:cov": "TZ=Asia/Ho_Chi_Minh jest --coverage",
+    "typecheck": "npx tsc --project tsconfig.json --noEmit --skipLibCheck",
+    "prettier": "prettier --single-quote --write '{src,settings}/**/*.{ts,js,json,tsx}'",
+    "lint": "npx tslint --project tsconfig.json --config tslint.json '{src,settings}/**/*.{ts,tsx}'",
+    "lint:fix": " npx tslint --project tsconfig.json -c tslint.json -p tslint-tsconfig.json '{src,settings}/**/*.{ts,tsx}' --fix --format verbose"
   },
   "engines": {
     "node": "14.16.0",
@@ -45,6 +50,7 @@
   },
   "devDependencies": {
     "@types/express": "4.17.11",
+    "@types/jest": "^26.0.22",
     "@types/node": "14.14.32",
     "@types/parse": "2.18.3",
     "@types/react": "17.0.0",
@@ -52,11 +58,35 @@
     "@types/react-loadable": "5.5.5",
     "@types/react-router": "5.1.11",
     "@types/react-router-dom": "5.1.7",
+    "husky": "^4.2.3",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
+    "lint-staged": "7.3.0",
     "nodemon": "2.0.7",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.3.0",
     "ts-loader": "7.0.4",
     "ts-node": "9.1.1",
+    "tslint": "^5.20.1",
+    "tslint-react": "5.0.0",
+    "tslint-config-airbnb": "5.11.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "4.2.3",
+    "validate-commit": "^3.4.0",
     "webpack": "4.43.0",
     "webpack-cli": "4.6.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run typecheck && npm run test:cov",
+      "commit-msg": "validate-commit-msg"
+    }
+  },
+  "lint-staged": {
+    "{src,settings}/**/*.{ts,tsx}": [
+      "npm run prettier",
+      "npm run lint:fix",
+      "git add *"
+    ]
   }
 }

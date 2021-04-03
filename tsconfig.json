@@ -37,7 +37,8 @@
         "./node_modules/@types/node/index.d.ts"
     ],
     "include": [
-        "src/**/**/*.ts",
+        "src/index.tsx",
+        "src/**/**/*.{ts,tsx}",
         "index.ts"
     ],
     "exclude": [

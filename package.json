@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "rm -rf build && tsc --project tsconfig.json && copyfiles public/** build/",
-    "dev": "npm run build && nodemon --watch 'src/**/*.ts' --exec 'node' build/server/index.js --verbose",
-    "server:dev": "nodemon --watch 'src/server/**/*.ts' --exec 'ts-node' src/server/index.ts --verbose",
+    "dev": "npm run build && nodemon --watch 'src/**/*.ts' --exec 'node' build/index.js --verbose",
+    "server:dev": "nodemon --watch 'src/server/**/*.ts' --exec 'ts-node' index.ts --verbose",
     "start": "node build/index.js",
     "postinstall": "npm run webpack && npm run build",
     "webpack": "webpack",

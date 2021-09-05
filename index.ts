@@ -11,6 +11,7 @@ import {
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
 // app.get('/', function (_: express.Request, res: express.Response) {
 //     res.send('Permission denied')

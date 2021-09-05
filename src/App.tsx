@@ -40,9 +40,9 @@ class App extends React.Component {
             <li>
               <Link to="/error">Error</Link>
             </li>
-            {/* <li>
-                            <Link to="/dashboard">Dashboard</Link>
-                        </li> */}
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
           </ul>
         </div>
         <React.Suspense fallback={Loading}>

@@ -40,7 +40,7 @@
     "babel-loader": "^8.2.2",
     "copyfiles": "2.4.1",
     "parse-dashboard": "2.1.0",
-    "parse-server": "4.5.0",
+    "parse-server": "4.10.17",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-loadable": "5.5.0",
